@@ -120,7 +120,7 @@ class Proxy(object):
         }
 
     # noinspection PyUnreachableCode
-    def check(self, url: Any = "http://httpbin.org/get", timeout=5):
+    def check(self, url: Any = "http://gw.sandboxol.com/server-time", timeout=5):
         if not isinstance(url, URL): url = URL(url)
         with suppress(Exception):
             with self.open_socket() as sock:
@@ -163,7 +163,7 @@ class ProxyChecker:
 
     @staticmethod
     def checkAll(proxies: Collection[Proxy],
-                 url: Any = "http://httpbin.org/get",
+                 url: Any = "http://gw.sandboxol.com/server-time",
                  timeout=5,
                  threads=1000):
         with ThreadPoolExecutor(
